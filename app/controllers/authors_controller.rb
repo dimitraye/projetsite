@@ -35,6 +35,7 @@ class AuthorsController < ApplicationController
   def destroy
     @author.destroy
     redirect_to "/authors"
+    flash[:notice] = "L'auteur a bien été supprimé"
   end
 
   def author_params

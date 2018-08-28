@@ -1,19 +1,30 @@
-
-    <h1>Mangakas</h1>
-  <ul>
-    <li>
+<div class="jumbotron">
+    <h1>Mangaka</h1>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <span class="glyphicon glyphicon-asterisk">
        <%= @author.id %>
+      </span>
     </li>
-    <li>
+    <li class="list-group-item">
+      <span class="glyphicon glyphicon-user">
        <%= @author.firstname.capitalize %> <%= @author.lastname.upcase %>
+      </span>
     </li>
-    <li>
+    <li class="list-group-item">
+      <span class="glyphicon glyphicon-envelope">
        <%= @author.email %>
+     </span>
     </li>
 
-    <%= link_to "Modifier", author_edit_path %> <br>
+    <%= link_to "Modifier", author_edit_path, class: "btn btn-warning"  %>
 
-    <%= link_to "Supprimer l'auteur", author_path(@author), method: :delete  %><br>
+    <%= link_to "Supprimer l'auteur", author_path(@author), class: "btn btn-danger", method: :delete  %>
 
-    <%= link_to "Retour à la liste des auteurs", authors_path%>
+    <%= link_to "Retour à la liste des auteurs", authors_path, class: "btn btn-info"  %>
+
+    <%= link_to "Retour à la liste des mangas", books_path, class: "btn btn-info" %>
+
+
   </ul>
+</div>

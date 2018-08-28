@@ -1,2 +1,7 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<div class="jumbotron">
+  <h1>Modifier le manga</h1>
+
+  <%= render 'form' %>
+
+  <%= link_to "Retour à la liste des livres", books_path, class: "btn btn-info" %>
+</div>

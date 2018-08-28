@@ -1,2 +1,32 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="jumbotron">
+
+  <h1>Manga</h1>
+
+  <ul class="list-group">
+    <li class="list-group-item">
+       <%= @book.id %>
+    </li>
+
+    <li class="list-group-item">
+       <%= @book.title %>
+    </li>
+
+    <li class="list-group-item">
+       Ce livre a été écrit par <%= link_to "#{@book.author.firstname} #{@book.author.lastname}", author_path(@book.author) %>
+    </li>
+
+    <%= link_to "Modifier", book_edit_path, class: "btn btn-warning" %>
+
+     <%= link_to "Supprimer le livre", book_path(@book), class: "btn btn-danger", method: :delete %>
+
+    <%= link_to "Retour à la liste des livres", books_path, class: "btn btn-info" %>
+
+    <%= link_to "Retour à la liste des auteurs", authors_path, class: "btn btn-info"  %>
+
+
+    </ul>
+
+</div>
+
+
+

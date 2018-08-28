@@ -1,0 +1,17 @@
+
+
+  <% action_value = @book.id.nil? ? books_create_path : book_update_path %>
+
+<%= simple_form_for @book,  :url => action_value do |f| %>
+
+     <%=f.input :title, label: "Titre du Livre" %>
+
+       <%=f.association :author, collection: Author.all, prompt: "Sélétionnez un auteur" %>
+
+    <% submit_button_value = @book.id.nil? ? "Ajouter" : "Modifier"  %>
+
+    <%= f.submit submit_button_value, class: "btn btn-success" %>
+
+
+
+<% end %>

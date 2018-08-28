@@ -9,15 +9,15 @@
 
   <%= form_for @author, url: { action: action_value } do |f| %>
 
-        Prénom <%=f.text_field :firstname %> <%= firstname_error %> <br>
+        Prénom <%=f.text_field :firstname, class: "form-control" %> <%= firstname_error %> <br>
 
-        Nom <%=f.text_field :lastname %> <%= lastname_error %> <br>
+        Nom <%=f.text_field :lastname, class: "form-control" %> <%= lastname_error %> <br>
 
-        Email <%=f.text_field :email %> <%= email_error %> <br>
+        Email <%=f.text_field :email, class: "form-control" %> <%= email_error %> <br>
 
       <% submit_button_value = @author.id.nil? ? "Ajouter" : "Modifier"  %>
 
-      <%= f.submit submit_button_value %>
+      <%= f.submit submit_button_value, class: "btn btn-success" %>
 
   <% end %>
 
