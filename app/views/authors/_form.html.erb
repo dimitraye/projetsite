@@ -1,0 +1,23 @@
+
+  <% if @author.errors.any? %>
+    <% firstname_error = @author.errors.messages[:firstname].join(", ") if @author.errors.messages[:firstname] %>
+     <% lastname_error = @author.errors.messages[:lastname].join(", ") if @author.errors.messages[:lastname] %>
+    <% email_error = @author.errors.messages[:email].join(", ") if @author.errors.messages[:email] %>
+  <% end %>
+
+    <% action_value = @author.id.nil? ? "create" : "update" %>
+
+  <%= form_for @author, url: { action: action_value } do |f| %>
+
+        Prénom <%=f.text_field :firstname %> <%= firstname_error %> <br>
+
+        Nom <%=f.text_field :lastname %> <%= lastname_error %> <br>
+
+        Email <%=f.text_field :email %> <%= email_error %> <br>
+
+      <% submit_button_value = @author.id.nil? ? "Ajouter" : "Modifier"  %>
+
+      <%= f.submit submit_button_value %>
+
+  <% end %>
+

@@ -1,0 +1,22 @@
+<h1>Mangakas</h1>
+
+
+
+
+  <h1>Auteurs</h1>
+
+  <ul>
+
+    <% @authors.each do |author| %>
+
+      <li>
+      <%= link_to "#{author.firstname} #{author.lastname}", author_path(author) %>
+      </li>
+
+    <% end %>
+
+  </ul>
+  <%= link_to "Ajouter un mangaka", authors_new_path %>
+
+
+

@@ -1,0 +1,19 @@
+
+    <h1>Mangakas</h1>
+  <ul>
+    <li>
+       <%= @author.id %>
+    </li>
+    <li>
+       <%= @author.firstname.capitalize %> <%= @author.lastname.upcase %>
+    </li>
+    <li>
+       <%= @author.email %>
+    </li>
+
+    <%= link_to "Modifier", author_edit_path %> <br>
+
+    <%= link_to "Supprimer l'auteur", author_path(@author), method: :delete  %><br>
+
+    <%= link_to "Retour à la liste des auteurs", authors_path%>
+  </ul>
